@@ -12,6 +12,26 @@ body {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at 8% 18%, rgba($secondary-color, 0.14), transparent 62%),
+    radial-gradient(circle at 82% 12%, rgba($primary-color, 0.12), transparent 60%),
+    radial-gradient(circle at 12% 88%, rgba($primary-color, 0.1), transparent 65%),
+    #f8f9fc;
+  position: relative;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba($dark-blue-text, 0.08) 1px, transparent 0);
+  background-size: 46px 46px;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  z-index: -1;
 }
 
 /* Scrollbar */
