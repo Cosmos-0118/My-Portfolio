@@ -5,8 +5,6 @@ name: Portfolio
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 # Default GITHUB_TOKEN needs explicit write permission for deployments
 permissions:
   contents: write
@@ -25,6 +23,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
       # Install project
       - name: Install project
@@ -32,7 +32,7 @@ jobs:
 
       # Build project
       - name: Build project
-        run: npm run-script build
+        run: npm run build
 
       # Push to Github Pages
       - name: Github Pages
