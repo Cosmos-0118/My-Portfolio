@@ -1,0 +1,165 @@
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+#hero {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    130deg,
+    rgba($primary-color, 0.92) 0%,
+    rgba($secondary-color, 0.92) 100%
+  );
+  font-weight: 400;
+  color: rgba($white-color, 0.95);
+  padding: 0 5.6rem;
+  margin-bottom: 0;
+  z-index: 0;
+
+  .hero-download {
+    position: absolute;
+    top: 3.2rem;
+    right: 5.6rem;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba($white-color, 0.5);
+    background: rgba($dark-blue-text, 0.28);
+    color: rgba($white-color, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    font-size: 1.35rem;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+    &:hover,
+    &:focus {
+      background: rgba($dark-blue-text, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 1.2rem 3.2rem rgba($dark-blue-text, 0.35);
+    }
+
+    @include respond(tab-port) {
+      right: 3.2rem;
+    }
+
+    @include respond(phone) {
+      left: 50%;
+      right: auto;
+      top: 2.4rem;
+      transform: translateX(-50%);
+      font-size: 1.2rem;
+      letter-spacing: 0.07em;
+      padding: 0.9rem 2.2rem;
+
+      &:hover,
+      &:focus {
+        transform: translateX(-50%) translateY(-2px);
+      }
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    z-index: 1;
+  }
+
+  &::before {
+    width: 32rem;
+    height: 32rem;
+    top: -14rem;
+    right: -10rem;
+    background: radial-gradient(
+      circle at center,
+      rgba($white-color, 0.35),
+      transparent 65%
+    );
+    filter: blur(4px);
+  }
+
+  &::after {
+    width: 26rem;
+    height: 26rem;
+    bottom: -12rem;
+    left: -8rem;
+    background: radial-gradient(
+      circle at center,
+      rgba($white-color, 0.25),
+      transparent 60%
+    );
+    filter: blur(6px);
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include respond(phone) {
+    padding: 0 $default-font-size;
+  }
+
+  .hero-title {
+    font-size: 5.6rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 12px 40px rgba($dark-blue-text, 0.45);
+
+    span {
+  color: color.adjust($secondary-color, $lightness: 18%);
+      text-shadow: 0 10px 36px rgba($dark-blue-text, 0.45);
+    }
+
+    @include respond(tab-land) {
+      font-size: 4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+    @include respond(phone-xs) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.6rem;
+    position: relative;
+    z-index: 1;
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+
+    & a {
+      font-size: 2.4rem;
+      color: $white-color;
+      text-shadow: 0 6px 24px rgba($dark-blue-text, 0.45);
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
+    }
+  }
+}

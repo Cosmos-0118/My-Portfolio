@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+section {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+
+  @include respond(phone) {
+    border: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+section:not(#hero) {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 3rem;
+    border-radius: 2.4rem;
+    background: linear-gradient(
+      140deg,
+      rgba($primary-color, 0.08) 0%,
+      rgba($secondary-color, 0.12) 100%
+    );
+    z-index: -1;
+  }
+
+  @include respond(phone) {
+    &::before {
+      inset: 1.4rem;
+      border-radius: 1.6rem;
+    }
+  }
+}
