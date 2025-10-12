@@ -5,11 +5,13 @@ section {
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: clamp(8rem, 12vh, 11rem);
 
   @include respond(phone) {
     border: none;
     padding-left: 1rem;
     padding-right: 1rem;
+    scroll-margin-top: 7.2rem;
   }
 }
 

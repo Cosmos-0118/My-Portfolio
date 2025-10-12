@@ -10,6 +10,7 @@
 @use "./sass/components/buttons";
 @use "./sass/components/custom-overrides";
 
+@use "./sass/layout/header";
 @use "./sass/layout/footer";
 @use "./sass/layout/sections";
 
@@ -17,3 +18,4 @@
 @use "./sass/sections/contact";
 @use "./sass/sections/hero";
 @use "./sass/sections/projects";
+@use "./sass/sections/skills";

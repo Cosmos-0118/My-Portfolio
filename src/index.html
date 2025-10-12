@@ -28,15 +28,57 @@
 
   <body>
     <div id="top"></div>
+    <header class="site-header" data-nav>
+      <div class="container site-header__inner">
+        <a class="site-header__logo" href="#top" aria-label="Back to top">
+          Dhanush
+        </a>
+        <button
+          class="site-header__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="site-header__toggle-box" aria-hidden="true">
+            <span class="site-header__toggle-line"></span>
+            <span class="site-header__toggle-line"></span>
+            <span class="site-header__toggle-line"></span>
+          </span>
+          <span class="site-header__toggle-label">Menu</span>
+        </button>
+        <nav
+          class="site-header__nav"
+          id="primary-navigation"
+          aria-label="Primary"
+        >
+          <ul class="site-header__list">
+            <li class="site-header__item">
+              <a class="site-header__link" href="#about">About</a>
+            </li>
+            <li class="site-header__item">
+              <a class="site-header__link" href="#skills">Skills</a>
+            </li>
+            <li class="site-header__item">
+              <a class="site-header__link" href="#projects">Projects</a>
+            </li>
+            <li class="site-header__item">
+              <a class="site-header__link" href="#contact">Contact</a>
+            </li>
+            <li class="site-header__item">
+              <a
+                class="site-header__action"
+                href="assets/dhanush-resume.pdf"
+                download
+                aria-label="Download a copy of my resume"
+              >
+                Download Resume
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <section id="hero" class="jumbotron">
-      <a
-        class="hero-download"
-        href="assets/dhanush-resume.pdf"
-        download
-        aria-label="Download a copy of my resume"
-      >
-        Download Resume
-      </a>
       <div class="container">
         <h1 class="hero-title load-hidden">
           Hi, my name is <span class="text-color-main">Dhanush</span>
@@ -101,45 +143,21 @@
         </div>
       </div>
     </section>
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills &amp; Tools</h2>
+        <p class="skills-intro load-hidden">
+          A snapshot of the languages, tools, and domains I am actively honing.
+        </p>
+        <div class="skills-grid" data-skills></div>
+      </div>
+    </section>
     <section id="projects">
       <div class="container">
         <div class="project-wrapper">
           <h2 class="section-title dark-blue-text">Projects</h2>
 
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">CampusCollab</h3>
-                <div>
-                  <p class="mb-4">
-                    CampusCollab is a Java Swing-based student collaboration
-                    platform that helps classmates find teammates, form project
-                    groups, manage shared tasks, and communicate milestones in
-                    real time. It streamlines teamwork with searchable profiles,
-                    role-based permissions, and integrated task tracking
-                    tailored for academic projects.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <div
-                  data-tilt
-                  data-tilt-max="4"
-                  data-tilt-glare="true"
-                  data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt"
-                >
-                  <img
-                    alt="CampusCollab dashboard screenshot"
-                    class="img-fluid"
-                    src="assets/project.jpg"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="projects-list" data-projects></div>
         </div>
       </div>
     </section>

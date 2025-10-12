@@ -25,77 +25,6 @@
   margin-bottom: 0;
   z-index: 0;
 
-  .hero-download {
-    position: absolute;
-    top: 3.2rem;
-    right: 5.6rem;
-    z-index: 3;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2.4rem;
-    border-radius: 999px;
-    border: 1px solid rgba($white-color, 0.5);
-    background: rgba($dark-blue-text, 0.28);
-    color: rgba($white-color, 0.95);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 600;
-    font-size: 1.35rem;
-    text-decoration: none;
-    backdrop-filter: blur(10px);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease,
-      background 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 1.6rem 4.2rem rgba($dark-blue-text, 0.32);
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 2px;
-      border-radius: inherit;
-      background: linear-gradient(
-        135deg,
-        rgba($white-color, 0.28),
-        rgba($white-color, 0)
-      );
-      opacity: 0.85;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    &:hover,
-    &:focus {
-      background: rgba($dark-blue-text, 0.5);
-      transform: translateY(-3px);
-      border-color: rgba($white-color, 0.85);
-      box-shadow: 0 2.2rem 4.8rem rgba($dark-blue-text, 0.38);
-
-      &::after {
-        opacity: 1;
-      }
-    }
-
-    @include respond(tab-port) {
-      right: 3.2rem;
-    }
-
-    @include respond(phone) {
-      left: 50%;
-      right: auto;
-      top: 2.4rem;
-      transform: translateX(-50%);
-      font-size: 1.2rem;
-      letter-spacing: 0.07em;
-      padding: 0.9rem 2.2rem;
-
-      &:hover,
-      &:focus {
-        transform: translateX(-50%) translateY(-2px);
-      }
-    }
-  }
-
   &::before,
   &::after {
     content: "";
@@ -172,22 +101,7 @@
     text-shadow: 0 12px 40px rgba($dark-blue-text, 0.45);
 
     &::after {
-      content: "";
-      position: absolute;
-      bottom: -1.8rem;
-      left: 0;
-      width: 12rem;
-      height: 0.6rem;
-      border-radius: 999px;
-      background: linear-gradient(
-        90deg,
-        rgba($white-color, 0.8),
-        rgba($secondary-color, 0.2) 80%,
-        transparent 100%
-      );
-      opacity: 0.9;
-      transform-origin: left;
-      animation: underlineSweep 9s ease-in-out infinite;
+      content: none;
     }
 
     span {
@@ -304,25 +218,6 @@
   100% {
     opacity: 0.6;
     transform: scale(0.92) translate3d(0, 0, 0);
-  }
-}
-
-@keyframes underlineSweep {
-  0% {
-    width: 8rem;
-    opacity: 0.35;
-  }
-  40% {
-    width: 13rem;
-    opacity: 1;
-  }
-  70% {
-    width: 10rem;
-    opacity: 0.7;
-  }
-  100% {
-    width: 8rem;
-    opacity: 0.35;
   }
 }
 

@@ -58,6 +58,21 @@ export const targetElements = [
     },
   },
   {
+    element: ".skills-intro",
+    animation: {
+      delay: 400,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".skills-card",
+    animation: {
+      delay: 200,
+      interval: 120,
+      origin: "bottom",
+    },
+  },
+  {
     element: ".contact-wrapper",
     animation: {
       delay: 800,
