@@ -4,26 +4,6 @@ import { targetElements, defaultProps } from "./data/scrollRevealConfig";
 import { projectsData } from "./data/projectsData";
 import { skillsData } from "./data/skillsData";
 
-const fallbackProjectImage = new URL("./assets/project.jpg", import.meta.url)
-  .href;
-
-// Ensure asset URLs are absolute and resolvable in the browser regardless of
-// which module imported them. This avoids broken images when a relative path
-// (emitted by the bundler) is interpreted relative to the document instead of
-// the originating module.
-const resolveProjectImageSrc = (rawSrc) => {
-  try {
-    const src =
-      rawSrc && typeof rawSrc === "object" && "default" in rawSrc
-        ? rawSrc.default
-        : rawSrc;
-
-    return new URL(src || "./assets/project.jpg", import.meta.url).href;
-  } catch (_) {
-    return fallbackProjectImage;
-  }
-};
-
 const renderSkills = () => {
   const skillsHost = document.querySelector("[data-skills]");
   if (!skillsHost) return;
@@ -102,6 +82,33 @@ const renderProjects = () => {
       textWrapper.append(stackList);
     }
 
+    if (project.github || project.deployment) {
+      const linksWrapper = document.createElement("div");
+      linksWrapper.className = "project-wrapper__links";
+
+      if (project.github) {
+        const githubLink = document.createElement("a");
+        githubLink.className = "cta-btn cta-btn--projects";
+        githubLink.href = project.github;
+        githubLink.target = "_blank";
+        githubLink.rel = "noreferrer";
+        githubLink.textContent = "GitHub";
+        linksWrapper.append(githubLink);
+      }
+
+      if (project.deployment) {
+        const deploymentLink = document.createElement("a");
+        deploymentLink.className = "cta-btn cta-btn--projects";
+        deploymentLink.href = project.deployment;
+        deploymentLink.target = "_blank";
+        deploymentLink.rel = "noreferrer";
+        deploymentLink.textContent = "View Deployment";
+        linksWrapper.append(deploymentLink);
+      }
+
+      textWrapper.append(linksWrapper);
+    }
+
     textColumn.append(textWrapper);
 
     const imageColumn = document.createElement("div");
@@ -119,13 +126,10 @@ const renderProjects = () => {
 
     const image = document.createElement("img");
     image.className = "img-fluid";
-    image.src = resolveProjectImageSrc(project.image?.src);
+    image.src = project.image?.src || "";
     image.alt = project.image?.alt || `${project.title} preview`;
     image.loading = "lazy";
     image.decoding = "async";
-    image.addEventListener("error", () => {
-      image.src = fallbackProjectImage;
-    });
 
     tiltContainer.append(image);
     imageWrapper.append(tiltContainer);
