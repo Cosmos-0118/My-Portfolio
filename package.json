@@ -21,7 +21,7 @@
   "homepage": "https://github.com/cobiwave/simplefolio#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.0",
-    "parcel": "^2.16.0",
+    "parcel": "^2.16.4",
     "prettier": "^2.8.1"
   },
   "dependencies": {
