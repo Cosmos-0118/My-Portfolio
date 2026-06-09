@@ -1,5 +1,6 @@
 import initScrollReveal from "./scripts/scrollReveal";
 import initTiltEffect from "./scripts/tiltAnimation";
+import initGlitterEffect from "./scripts/glitterEffect";
 import { targetElements, defaultProps } from "./data/scrollRevealConfig";
 import { projectsData } from "./data/projectsData";
 import { skillsData } from "./data/skillsData";
@@ -10,32 +11,38 @@ const renderSkills = () => {
 
   const fragment = document.createDocumentFragment();
 
-  skillsData.forEach((skillGroup) => {
-    const card = document.createElement("article");
-    card.className = "skill-card glass-panel load-hidden";
+  skillsData.forEach((skillGroup, index) => {
+    const row = document.createElement("article");
+    row.className = "skills-row";
+    row.style.setProperty("--row-accent", `var(--skill-accent-${(index % 4) + 1})`);
+
+    const label = document.createElement("div");
+    label.className = "skills-row__label";
+
+    const marker = document.createElement("span");
+    marker.className = "skills-row__marker";
+    marker.setAttribute("aria-hidden", "true");
 
     const heading = document.createElement("h3");
-    heading.className = "skill-card__title";
+    heading.className = "skills-row__title";
     heading.textContent = skillGroup.category;
 
-    const summary = document.createElement("p");
-    summary.className = "skill-card__summary";
-    summary.textContent = skillGroup.summary;
+    label.append(marker, heading);
 
-    const badges = document.createElement("ul");
-    badges.className = "skill-card__badges";
+    const chips = document.createElement("ul");
+    chips.className = "skills-row__chips";
 
     if (Array.isArray(skillGroup.items)) {
       skillGroup.items.forEach((item) => {
-        const badge = document.createElement("li");
-        badge.className = "skill-badge";
-        badge.textContent = item;
-        badges.append(badge);
+        const chip = document.createElement("li");
+        chip.className = "skill-chip";
+        chip.textContent = item;
+        chips.append(chip);
       });
     }
 
-    card.append(heading, summary, badges);
-    fragment.append(card);
+    row.append(label, chips);
+    fragment.append(row);
   });
 
   skillsHost.innerHTML = "";
@@ -160,6 +167,7 @@ renderSkills();
 renderProjects();
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
+initGlitterEffect();
 
 // Smooth scrolling
 const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');

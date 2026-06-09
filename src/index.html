@@ -20,8 +20,8 @@
 
   <body>
     <div id="top"></div>
-    <div class="glow-blob"></div>
-    <div class="glow-blob glow-blob--2"></div>
+    <div class="glow-blob" aria-hidden="true"></div>
+    <div class="glow-blob glow-blob--2" aria-hidden="true"></div>
     
     <header class="site-header" data-nav>
       <div class="container site-header__inner">
@@ -50,17 +50,29 @@
     <main>
       <section id="hero" class="hero-section">
         <div class="container hero-container">
-          <h1 class="hero-title load-hidden">
-            Crafting <span class="text-gradient">digital experiences</span><br />
-            that inspire.
-          </h1>
-          <p class="hero-subtitle load-hidden">
-            Hi, I'm Dhanush S. A Computer Science student and software developer building robust web applications.
-          </p>
-          <div class="hero-cta load-hidden">
-            <a id="know-more-btn" class="btn btn-primary" href="#about">Explore My Work</a>
-            <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="hero-content">
+            <div class="hero-row hero-row--headline load-hidden">
+              <h1 class="hero-title">
+                <span class="hero-title__line">Crafting <span class="text-gradient">digital experiences</span></span>
+                <span class="hero-title__line">that inspire.</span>
+              </h1>
+            </div>
+            <div class="hero-divider load-hidden" aria-hidden="true"></div>
+            <div class="hero-row hero-row--actions load-hidden">
+              <p class="hero-subtitle">
+                Computer Science student at SRM University building robust, user-focused web applications with modern tools like Next.js and React.
+              </p>
+              <div class="hero-cta">
+                <a id="know-more-btn" class="btn btn-primary" href="#about">Explore My Work</a>
+                <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+              </div>
+            </div>
           </div>
+          <a class="hero-scroll" href="#about" aria-label="Scroll to about section">
+            <span class="hero-scroll__label">Scroll</span>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </a>
         </div>
       </section>
 
@@ -94,7 +106,7 @@
             <h2 class="section-title">Skills & Tools</h2>
             <div class="section-divider"></div>
           </div>
-          <div class="skills-grid" data-skills>
+          <div class="skills-showcase glass-panel load-hidden" data-skills>
             <!-- Dynamic Skills Inserted Here -->
           </div>
         </div>

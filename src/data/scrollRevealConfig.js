@@ -8,74 +8,69 @@ export const defaultProps = {
 
 export const targetElements = [
   {
-    element: ".section-title",
+    element: ".section-header",
     animation: {
-      delay: 300,
+      delay: 200,
       distance: "0px",
       origin: "bottom",
     },
   },
   {
-    element: ".hero-title",
+    element: ".hero-row--headline",
     animation: {
-      delay: 500,
-      origin: window.innerWidth > 768 ? "left" : "bottom",
-    },
-  },
-  {
-    element: ".hero-cta",
-    animation: {
-      delay: 1000,
-      origin: window.innerWidth > 768 ? "left" : "bottom",
-    },
-  },
-  {
-    element: ".about-wrapper__image",
-    animation: {
-      delay: 600,
+      delay: 300,
       origin: "bottom",
     },
   },
   {
-    element: ".about-wrapper__info",
-    animation: {
-      delay: 1000,
-      origin: window.innerWidth > 768 ? "left" : "bottom",
-    },
-  },
-  {
-    element: ".project-wrapper__text",
+    element: ".hero-divider",
     animation: {
       delay: 500,
-      origin: window.innerWidth > 768 ? "left" : "bottom",
-    },
-  },
-  {
-    element: ".project-wrapper__image",
-    animation: {
-      delay: 1000,
-      origin: window.innerWidth > 768 ? "right" : "bottom",
-    },
-  },
-  {
-    element: ".skills-intro",
-    animation: {
-      delay: 400,
+      distance: "0px",
+      scale: 0.9,
       origin: "bottom",
     },
   },
   {
-    element: ".skills-card",
+    element: ".hero-row--actions",
+    animation: {
+      delay: 650,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".about-image",
+    animation: {
+      delay: 300,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".about-text",
+    animation: {
+      delay: 500,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".skills-showcase",
+    animation: {
+      delay: 300,
+      origin: "bottom",
+    },
+  },
+  {
+    element: ".project-card",
     animation: {
       delay: 200,
-      interval: 120,
+      interval: 150,
       origin: "bottom",
     },
   },
   {
-    element: ".contact-wrapper",
+    element: ".contact-panel",
     animation: {
-      delay: 800,
+      delay: 300,
       origin: "bottom",
     },
   },
