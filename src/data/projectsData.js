@@ -25,6 +25,7 @@ export const projectsData = [
     },
     github: "https://github.com/Cosmos-0118/Credentia",
     deployment: "https://credentia.app",
+    isPrivate: true,
   },
   {
     title: "UniSlot",
@@ -44,6 +45,7 @@ export const projectsData = [
     },
     github: "https://github.com/Cosmos-0118/UniSlot",
     deployment: "https://uni-slot-three.vercel.app",
+    isPrivate: true,
   },
   {
     title: "Compus",
@@ -65,6 +67,7 @@ export const projectsData = [
     },
     github: "https://github.com/HARIHARAN-38/Compus",
     deployment: "https://compusweb.app",
+    isPrivate: true,
   },
   {
     title: "QueryCraft",
@@ -95,5 +98,6 @@ export const projectsData = [
       src: campusCollabImage,
       alt: "CampusCollab dashboard screenshot",
     },
+    isPrivate: true,
   },
 ];

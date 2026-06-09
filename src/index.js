@@ -106,6 +106,32 @@ const renderProjects = () => {
         githubLink.target = "_blank";
         githubLink.rel = "noreferrer";
         githubLink.innerHTML = `<i class="fa fa-github"></i> Code`;
+
+        if (project.isPrivate) {
+          githubLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            const modal = document.getElementById("private-repo-modal");
+            const proceedBtn = document.getElementById("modal-proceed-btn");
+            const cancelBtn = document.getElementById("modal-cancel-btn");
+            
+            if (modal && proceedBtn && cancelBtn) {
+              proceedBtn.href = project.github;
+              modal.removeAttribute("aria-hidden");
+              
+              const closeModal = () => {
+                modal.setAttribute("aria-hidden", "true");
+              };
+              
+              cancelBtn.onclick = closeModal;
+              proceedBtn.onclick = closeModal;
+              
+              modal.onclick = (event) => {
+                if (event.target === modal) closeModal();
+              };
+            }
+          });
+        }
+
         linksWrapper.append(githubLink);
       }
 
