@@ -5,40 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
-    <title>Dhanush S | Student at SRM University</title>
-    <meta
-      name="keywords"
-      content="Dhanush S, dhanush13244, SRM University, CSE, Java Developer, CampusCollab, Student Developer"
-    />
-    <meta
-      name="description"
-      content="I'm Dhanush S, a Computer Science student at SRM University with a passion for developing practical, user-focused applications. I enjoy building efficient software solutions and continuously learning new technologies."
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <title>Dhanush S | Portfolio</title>
+    <meta name="keywords" content="Dhanush S, dhanush13244, SRM University, CSE, Next.js, React Developer, Full Stack" />
+    <meta name="description" content="I'm Dhanush S, a developer with a passion for building practical, user-focused web applications." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="styles.scss" />
-    <script
-      defer
-      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
-    ></script>
+    <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
   </head>
 
   <body>
     <div id="top"></div>
+    <div class="glow-blob"></div>
+    <div class="glow-blob glow-blob--2"></div>
+    
     <header class="site-header" data-nav>
       <div class="container site-header__inner">
         <a class="site-header__logo" href="#top" aria-label="Back to top">
-          Dhanush
+          Dhanush<span class="logo-dot">.</span>
         </a>
-        <button
-          class="site-header__toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="primary-navigation"
-        >
+        <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
           <span class="site-header__toggle-box" aria-hidden="true">
             <span class="site-header__toggle-line"></span>
             <span class="site-header__toggle-line"></span>
@@ -46,167 +36,116 @@
           </span>
           <span class="site-header__toggle-label">Menu</span>
         </button>
-        <nav
-          class="site-header__nav"
-          id="primary-navigation"
-          aria-label="Primary"
-        >
+        <nav class="site-header__nav" id="primary-navigation" aria-label="Primary">
           <ul class="site-header__list">
-            <li class="site-header__item">
-              <a class="site-header__link" href="#about">About</a>
-            </li>
-            <li class="site-header__item">
-              <a class="site-header__link" href="#skills">Skills</a>
-            </li>
-            <li class="site-header__item">
-              <a class="site-header__link" href="#projects">Projects</a>
-            </li>
-            <li class="site-header__item">
-              <a class="site-header__link" href="#contact">Contact</a>
-            </li>
+            <li class="site-header__item"><a class="site-header__link" href="#about">About</a></li>
+            <li class="site-header__item"><a class="site-header__link" href="#skills">Skills</a></li>
+            <li class="site-header__item"><a class="site-header__link" href="#projects">Projects</a></li>
+            <li class="site-header__item"><a class="site-header__link" href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <section id="hero" class="jumbotron">
-      <div class="container">
-        <h1 class="hero-title load-hidden">
-          Hi, my name is <span class="text-color-main">Dhanush</span>
-          <br />
-          I'm a Computer Science student and aspiring software developer.
-        </h1>
-        <p class="hero-cta load-hidden">
-          <a
-            rel="noreferrer"
-            id="know-more-btn"
-            class="cta-btn cta-btn--hero"
-            href="#about"
-            >Know more</a
-          >
-        </p>
-      </div>
-    </section>
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title load-hidden">About me</h2>
-        <div class="row about-wrapper">
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__image load-hidden">
-              <img
-                alt="Profile Image"
-                class="img-fluid rounded shadow-lg"
-                height="auto"
-                width="300px"
-                src="assets/profile.png"
-                alt="Profile Image"
-              />
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__info load-hidden">
-              <p class="about-wrapper__info-text">
-                I'm Dhanush S, a Computer Science student at SRM University with
-                a strong interest in software and game development. I enjoy
-                building creative, efficient, and user-focused applications
-                while constantly exploring new tools, frameworks, and design
-                ideas
-              </p>
-              <p class="about-wrapper__info-text">
-                I’m currently enhancing my skills in Java, MySQL, and front-end
-                technologies through academic and personal projects. My
-                long-term goal is to become a skilled developer capable of
-                building both powerful applications and immersive gaming
-                experiences that combine logic, creativity, and innovation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="skills">
-      <div class="container">
-        <h2 class="section-title">Skills &amp; Tools</h2>
-        <p class="skills-intro load-hidden">
-          A snapshot of the languages, tools, and domains I am actively honing.
-        </p>
-        <div class="skills-grid" data-skills></div>
-      </div>
-    </section>
-    <section id="projects">
-      <div class="container">
-        <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Projects</h2>
 
-          <div class="projects-list" data-projects></div>
-        </div>
-      </div>
-    </section>
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-wrapper load-hidden">
-          <p class="contact-wrapper__text">
-            Let's connect and collaborate on meaningful projects or ideas.
+    <main>
+      <section id="hero" class="hero-section">
+        <div class="container hero-container">
+          <h1 class="hero-title load-hidden">
+            Crafting <span class="text-gradient">digital experiences</span><br />
+            that inspire.
+          </h1>
+          <p class="hero-subtitle load-hidden">
+            Hi, I'm Dhanush S. A Computer Science student and software developer building robust web applications.
           </p>
-          <div class="contact-wrapper__links">
-            <a
-              rel="noreferrer"
-              target="_blank"
-              class="cta-btn cta-btn--resume"
-              href="mailto:dhanush13244@gmail.com"
-              >Email me</a
-            >
-            <a
-              rel="noreferrer"
-              href="mailto:dhanush13244@gmail.com"
-              class="contact-link"
-            >
-              dhanush13244@gmail.com
-            </a>
+          <div class="hero-cta load-hidden">
+            <a id="know-more-btn" class="btn btn-primary" href="#about">Explore My Work</a>
+            <a class="btn btn-secondary" href="#contact">Get in Touch</a>
           </div>
         </div>
-      </div>
-    </section>
-    <footer class="footer navbar-static-bottom">
-      <div class="container">
-        <a rel="noreferrer" href="#top" class="back-to-top">
-          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-        </a>
+      </section>
+
+      <section id="about" class="about-section section-padding">
+        <div class="container">
+          <div class="section-header load-hidden">
+            <h2 class="section-title">About me</h2>
+            <div class="section-divider"></div>
+          </div>
+          <div class="about-content">
+            <div class="about-image load-hidden">
+              <div class="image-wrapper glass-panel">
+                <img alt="Profile Image" src="assets/profile.png" />
+              </div>
+            </div>
+            <div class="about-text load-hidden">
+              <p>
+                I'm a Computer Science student at SRM University with a strong interest in full-stack web development. I enjoy building creative, efficient, and user-focused applications while constantly exploring new tools, frameworks, and design ideas.
+              </p>
+              <p>
+                Currently, I'm deep diving into modern web ecosystems like Next.js, React, and serverless architectures. My long-term goal is to build powerful applications that combine complex logic with beautiful, intuitive interfaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills-section section-padding">
+        <div class="container">
+          <div class="section-header load-hidden">
+            <h2 class="section-title">Skills & Tools</h2>
+            <div class="section-divider"></div>
+          </div>
+          <div class="skills-grid" data-skills>
+            <!-- Dynamic Skills Inserted Here -->
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section section-padding">
+        <div class="container">
+          <div class="section-header load-hidden">
+            <h2 class="section-title">Selected Projects</h2>
+            <div class="section-divider"></div>
+          </div>
+          <div class="projects-list" data-projects>
+            <!-- Dynamic Projects Inserted Here -->
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section section-padding">
+        <div class="container">
+          <div class="glass-panel contact-panel load-hidden">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-text">
+              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            </p>
+            <div class="contact-actions">
+              <a rel="noreferrer" target="_blank" class="btn btn-primary" href="mailto:dhanush13244@gmail.com">
+                <i class="fa fa-envelope" aria-hidden="true"></i> Say Hello
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-container">
         <div class="social-links">
-          <a
-            rel="noreferrer"
-            href="https://x.com/dhanush_13244"
-            target="_blank"
-            aria-label="Dhanush on X"
-          >
-            <i class="fa fa-twitter fa-inverse" aria-hidden="true"></i>
-            <span class="social-links__label">x.com/dhanush_13244</span>
+          <a rel="noreferrer" href="https://x.com/dhanush_13244" target="_blank" aria-label="Dhanush on X">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
           </a>
-          <a
-            rel="noreferrer"
-            href="https://www.linkedin.com/in/dhanushs-dev"
-            target="_blank"
-            aria-label="Dhanush on LinkedIn"
-          >
-            <i class="fa fa-linkedin fa-inverse" aria-hidden="true"></i>
-            <span class="social-links__label"
-              >linkedin.com/in/dhanushs-dev</span
-            >
+          <a rel="noreferrer" href="https://www.linkedin.com/in/dhanushs-dev" target="_blank" aria-label="Dhanush on LinkedIn">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
           </a>
-          <a
-            rel="noreferrer"
-            href="https://github.com/Cosmos-0118"
-            target="_blank"
-            aria-label="Dhanush on GitHub"
-          >
-            <i class="fa fa-github fa-inverse" aria-hidden="true"></i>
-            <span class="social-links__label">github.com/Cosmos-0118</span>
+          <a rel="noreferrer" href="https://github.com/Cosmos-0118" target="_blank" aria-label="Dhanush on GitHub">
+            <i class="fa fa-github" aria-hidden="true"></i>
           </a>
         </div>
-
-        <hr />
-
-        <p class="footer__text">© 2025 - Portfolio by Dhanush S</p>
+        <p class="footer-text">© 2026 Dhanush S. All rights reserved.</p>
+        <a rel="noreferrer" href="#top" class="back-to-top" aria-label="Back to top">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </a>
       </div>
     </footer>
 

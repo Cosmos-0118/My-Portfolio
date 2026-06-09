@@ -12,29 +12,29 @@ const renderSkills = () => {
 
   skillsData.forEach((skillGroup) => {
     const card = document.createElement("article");
-    card.className = "skills-card load-hidden";
+    card.className = "skill-card glass-panel load-hidden";
 
     const heading = document.createElement("h3");
-    heading.className = "skills-card__title";
+    heading.className = "skill-card__title";
     heading.textContent = skillGroup.category;
 
+    const summary = document.createElement("p");
+    summary.className = "skill-card__summary";
+    summary.textContent = skillGroup.summary;
+
     const badges = document.createElement("ul");
-    badges.className = "skills-card__badges";
+    badges.className = "skill-card__badges";
 
     if (Array.isArray(skillGroup.items)) {
       skillGroup.items.forEach((item) => {
         const badge = document.createElement("li");
-        badge.className = "skills-card__badge";
+        badge.className = "skill-badge";
         badge.textContent = item;
         badges.append(badge);
       });
     }
 
-    const summary = document.createElement("p");
-    summary.className = "skills-card__summary";
-    summary.textContent = skillGroup.summary;
-
-    card.append(heading, badges, summary);
+    card.append(heading, summary, badges);
     fragment.append(card);
   });
 
@@ -49,94 +49,81 @@ const renderProjects = () => {
   const fragment = document.createDocumentFragment();
 
   projectsData.forEach((project) => {
-    const row = document.createElement("div");
-    row.className = "row";
-
-    const textColumn = document.createElement("div");
-    textColumn.className = "col-lg-4 col-sm-12";
-
-    const textWrapper = document.createElement("div");
-    textWrapper.className = "project-wrapper__text load-hidden";
-
-    const title = document.createElement("h3");
-    title.className = "project-wrapper__text-title";
-    title.textContent = project.title;
-
-    const description = document.createElement("p");
-    description.className = "mb-4";
-    description.textContent = project.description;
-
-    textWrapper.append(title, description);
-
-    if (Array.isArray(project.stack) && project.stack.length > 0) {
-      const stackList = document.createElement("ul");
-      stackList.className = "project-wrapper__stack";
-
-      project.stack.forEach((tech) => {
-        const stackItem = document.createElement("li");
-        stackItem.className = "project-wrapper__stack-item";
-        stackItem.textContent = tech;
-        stackList.append(stackItem);
-      });
-
-      textWrapper.append(stackList);
-    }
-
-    if (project.github || project.deployment) {
-      const linksWrapper = document.createElement("div");
-      linksWrapper.className = "project-wrapper__links";
-
-      if (project.github) {
-        const githubLink = document.createElement("a");
-        githubLink.className = "cta-btn cta-btn--projects";
-        githubLink.href = project.github;
-        githubLink.target = "_blank";
-        githubLink.rel = "noreferrer";
-        githubLink.textContent = "GitHub";
-        linksWrapper.append(githubLink);
-      }
-
-      if (project.deployment) {
-        const deploymentLink = document.createElement("a");
-        deploymentLink.className = "cta-btn cta-btn--projects";
-        deploymentLink.href = project.deployment;
-        deploymentLink.target = "_blank";
-        deploymentLink.rel = "noreferrer";
-        deploymentLink.textContent = "View Deployment";
-        linksWrapper.append(deploymentLink);
-      }
-
-      textWrapper.append(linksWrapper);
-    }
-
-    textColumn.append(textWrapper);
-
-    const imageColumn = document.createElement("div");
-    imageColumn.className = "col-lg-8 col-sm-12";
+    const card = document.createElement("article");
+    card.className = "project-card glass-panel load-hidden";
 
     const imageWrapper = document.createElement("div");
-    imageWrapper.className = "project-wrapper__image load-hidden";
-
-    const tiltContainer = document.createElement("div");
-    tiltContainer.className = "thumbnail rounded js-tilt";
-    tiltContainer.setAttribute("data-tilt", "");
-    tiltContainer.setAttribute("data-tilt-max", "4");
-    tiltContainer.setAttribute("data-tilt-glare", "true");
-    tiltContainer.setAttribute("data-tilt-max-glare", "0.5");
+    imageWrapper.className = "project-card__image-wrapper js-tilt";
+    imageWrapper.setAttribute("data-tilt", "");
+    imageWrapper.setAttribute("data-tilt-max", "3");
+    imageWrapper.setAttribute("data-tilt-glare", "true");
+    imageWrapper.setAttribute("data-tilt-max-glare", "0.3");
 
     const image = document.createElement("img");
-    image.className = "img-fluid";
+    image.className = "project-card__image";
     image.src = project.image?.src || "";
     image.alt = project.image?.alt || `${project.title} preview`;
     image.loading = "lazy";
     image.decoding = "async";
 
-    tiltContainer.append(image);
-    imageWrapper.append(tiltContainer);
-    imageColumn.append(imageWrapper);
+    imageWrapper.append(image);
 
-    row.append(textColumn, imageColumn);
-    fragment.append(row);
+    const contentWrapper = document.createElement("div");
+    contentWrapper.className = "project-card__content";
+
+    const title = document.createElement("h3");
+    title.className = "project-card__title text-gradient";
+    title.textContent = project.title;
+
+    const description = document.createElement("p");
+    description.className = "project-card__description";
+    description.textContent = project.description;
+
+    contentWrapper.append(title, description);
+
+    if (Array.isArray(project.stack) && project.stack.length > 0) {
+      const stackList = document.createElement("ul");
+      stackList.className = "project-card__stack";
+
+      project.stack.forEach((tech) => {
+        const stackItem = document.createElement("li");
+        stackItem.className = "stack-badge";
+        stackItem.textContent = tech;
+        stackList.append(stackItem);
+      });
+
+      contentWrapper.append(stackList);
+    }
+
+    if (project.github || project.deployment) {
+      const linksWrapper = document.createElement("div");
+      linksWrapper.className = "project-card__links";
+
+      if (project.github) {
+        const githubLink = document.createElement("a");
+        githubLink.className = "btn btn-outline";
+        githubLink.href = project.github;
+        githubLink.target = "_blank";
+        githubLink.rel = "noreferrer";
+        githubLink.innerHTML = `<i class="fa fa-github"></i> Code`;
+        linksWrapper.append(githubLink);
+      }
+
+      if (project.deployment) {
+        const deploymentLink = document.createElement("a");
+        deploymentLink.className = "btn btn-primary";
+        deploymentLink.href = project.deployment;
+        deploymentLink.target = "_blank";
+        deploymentLink.rel = "noreferrer";
+        deploymentLink.innerHTML = `<i class="fa fa-external-link"></i> Live App`;
+        linksWrapper.append(deploymentLink);
+      }
+
+      contentWrapper.append(linksWrapper);
+    }
+
+    card.append(imageWrapper, contentWrapper);
+    fragment.append(card);
   });
 
   projectsHost.innerHTML = "";
@@ -148,6 +135,7 @@ renderProjects();
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
+// Smooth scrolling
 const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
 
 smoothScrollLinks.forEach((link) => {
@@ -163,24 +151,16 @@ smoothScrollLinks.forEach((link) => {
   });
 });
 
+// Mobile Nav
 const siteHeader = document.querySelector(".site-header");
 const navToggle = document.querySelector(".site-header__toggle");
-const navLinks = siteHeader
-  ? siteHeader.querySelectorAll(".site-header__nav a")
-  : [];
+const navLinks = siteHeader ? siteHeader.querySelectorAll(".site-header__nav a") : [];
 
 if (siteHeader) {
   const closeNav = () => {
     siteHeader.classList.remove("site-header--is-open");
     if (navToggle) {
       navToggle.setAttribute("aria-expanded", "false");
-    }
-  };
-
-  const openNav = () => {
-    siteHeader.classList.add("site-header--is-open");
-    if (navToggle) {
-      navToggle.setAttribute("aria-expanded", "true");
     }
   };
 
@@ -207,10 +187,7 @@ if (siteHeader) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (
-      event.key === "Escape" &&
-      siteHeader.classList.contains("site-header--is-open")
-    ) {
+    if (event.key === "Escape" && siteHeader.classList.contains("site-header--is-open")) {
       closeNav();
     }
   });

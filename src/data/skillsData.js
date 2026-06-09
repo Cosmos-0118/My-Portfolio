@@ -1,31 +1,26 @@
 export const skillsData = [
   {
-    category: "Programming Languages",
+    category: "Languages",
     summary:
-      "Comfortable with the fundamentals and steadily sharpening problem-solving skills.",
-    items: ["Python", "C++", "C", "Java"],
+      "Building strong foundations across modern typed and compiled languages.",
+    items: ["TypeScript", "JavaScript", "Java", "Python", "C++", "SQL"],
   },
   {
-    category: "Tools & Platforms",
+    category: "Frameworks & Libraries",
     summary:
-      "Version control and project tooling used for academic and collaborative work.",
-    items: ["Git", "GitHub", "VS Code", "Canva"],
+      "Developing robust, responsive, and performant web applications.",
+    items: ["Next.js", "React", "Tailwind CSS", "Prisma", "NextAuth.js"],
   },
   {
-    category: "Web & Development",
+    category: "Tools & Cloud",
     summary:
-      "Applying core web technologies to stitch together small, full-stack experiments.",
-    items: ["HTML", "CSS", "JavaScript", "MySQL"],
+      "Leveraging cloud infrastructure and modern version control workflows.",
+    items: ["AWS", "Git", "GitHub", "VS Code", "Redis"],
   },
   {
-    category: "Areas of Interest",
+    category: "Databases",
     summary:
-      "Actively exploring these domains to build a stronger theoretical and practical base.",
-    items: [
-      "Machine Learning",
-      "AI",
-      "Software Development",
-      "Game Development",
-    ],
+      "Designing scalable schemas and managing relational data.",
+    items: ["PostgreSQL", "MySQL", "SQLite"],
   },
 ];
